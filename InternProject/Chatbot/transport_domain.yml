@@ -1,0 +1,152 @@
+%YAML 1.1
+---
+
+intents:
+- greet:
+    use_entities: true
+- inform:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- dont_know:
+  use_entities: true
+- deny:
+  use_entities: true
+- goodbye:
+  use_entities: true
+
+actions:
+- utter_greet
+- utter_say_hello
+- utter_goodbye
+- utter_on_it
+- utter_ask_howcanhelp
+- utter_ask_precisions
+- utter_ask_location
+- utter_ask_route_change
+- utter_ask_stop_in_route
+- utter_ask_what_stop
+- utter_ask_what_route
+- utter_dont_understand
+- utter_you_are_welcome
+- utter_thankyou
+- utter_sorry
+- utter_ask_latitude
+- utter_ask_longitude
+- action reset_slots
+- action_ask_about
+- action_find_delay_route
+- action_find_delay_stop
+- action_find_nb_vald_route
+- action_find_nb_vald_stop
+- action_find_fork_stops
+- action_find_stops_in_town
+- action_find_stops_route_in_town
+- action_find_nearest_stop
+- action_find_nearest_stop_route
+- action_find_next_train
+- action_find_possible_routes
+- action_choose_route
+
+config:
+  store_entities_as_slots: true
+
+entities:
+- info_type
+- latitude
+- longitude
+- town
+- route_name
+- stop_name
+- change
+- aim 
+- about
+- gps_coord_known
+
+slots:
+  info_type:
+    type: categorical
+    values:
+      - route
+      - stop
+      - town
+  aim:
+    type: categorical
+    values:
+      - delay
+      - traffic
+      - next_train
+      - change
+      - mean_of_travel
+      - nearest_stop
+
+  transport_type: 
+      type: categorical
+      values:
+      - train 
+      - rer_train
+      - metro_train
+      - bus
+      - tramway
+  latitude:
+    type: text
+  longitude:
+    type: text
+  town:
+    type: text
+  route_name:
+    type: text
+  stop_name:
+    type: text
+  route_change:
+    type: text
+  gps_coord_known:
+    type: bool
+
+templates: 
+  utter_ask_precisions:
+  - "Sur quel {info_type} voulez-vous des informations ?"
+  utter_ask_route_change:
+  - text: Sur quelle ligne voulez-vous aller ? 
+  utter_ask_howcanhelp:
+  - text: Comment puis-je vous aider ?
+  - text: Que puis-je faire pour vous ? 
+  utter_ask_location:
+  - text: Pour cela, j'aurais besoin de vos coordonnées GPS. Est-ce que vous les connaissez ? 
+    buttons:
+    - title: "oui"
+      payload: "/inform{gps_coord_known:True}"
+    - title: "non"
+      payload: "/inform{gps_coord_known:False}"
+  utter_ask_what_stop:
+  - text: A propos de quel arrêt voulez-vous cette information ?
+  - text: Sur quel arrêt voulez-vous cette information ?
+  utter_ask_what_route:
+  - text: Sur quelle ligne voulez-vous cette information ?
+  utter_goodbye:
+  - text: Au revoir 
+  - text: Bye !
+  - text: A bientôt !
+  utter_greet:
+  - text: Bonjour ! Que puis-je faire pour vous ? 
+  utter_on_it:
+  - text: Je vous dis ça dans un instant.
+  utter_dont_understand:
+  - text: Je ne comprends pas ce que vous voulez-me dire.
+  - text: Je suis désolé, je ne comprends pas.
+  utter_say_hello:
+  - text: Bonjour
+  - text: Bonjour !
+  - text: Bonjour :)
+  utter_you_are_welcome:
+  - text: "Je vous en prie"
+  - text: "Le plaisir est pour moi"
+  utter_thankyou:
+  - text: Je vous en prie, puis-je faire autre chose pour vous ? 
+  - text: le plaisir est pour moi. Puis-je faire autre chose ?
+  utter_sorry:
+  - Je suis désolé, dans ce cas je ne peux rien faire. Peut-être que je peux vous aider autrement ?
+  utter_ask_latitude:
+  - text: Veuillez entrer votre latitude 
+  utter_ask_longitude:
+  - text: Veuillez entrer votre longitude  

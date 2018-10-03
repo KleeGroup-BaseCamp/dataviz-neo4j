@@ -1,0 +1,315 @@
+.marker-cluster-small {
+	background-color: rgba(181, 226, 140, 0.6);
+	}
+.marker-cluster-small div {
+	background-color: rgba(110, 204, 57, 0.6);
+	}
+
+.marker-cluster-medium {
+	background-color: rgba(241, 211, 87, 0.6);
+	}
+.marker-cluster-medium div {
+	background-color: rgba(240, 194, 12, 0.6);
+	}
+
+.marker-cluster-large {
+	background-color: rgba(253, 156, 115, 0.6);
+	}
+.marker-cluster-large div {
+	background-color: rgba(241, 128, 23, 0.6);
+	}
+
+	/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+	background-color: rgb(181, 226, 140);
+	}
+.leaflet-oldie .marker-cluster-small div {
+	background-color: rgb(110, 204, 57);
+	}
+
+.leaflet-oldie .marker-cluster-medium {
+	background-color: rgb(241, 211, 87);
+	}
+.leaflet-oldie .marker-cluster-medium div {
+	background-color: rgb(240, 194, 12);
+	}
+
+.leaflet-oldie .marker-cluster-large {
+	background-color: rgb(253, 156, 115);
+	}
+.leaflet-oldie .marker-cluster-large div {
+	background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+	}
+.marker-cluster div {
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+
+	text-align: center;
+	border-radius: 15px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	}
+.marker-cluster span {
+	line-height: 30px;
+	}
+
+
+.range {
+    position: absolute;
+    width: 350px;
+    height: 5px;
+    margin: 0px 100px 0;
+}
+
+.range input {
+    width: 82%;
+    margin:0 25px 0;
+    position: absolute;
+    top: 3px;
+    height: 0;
+    -webkit-appearance: none;
+}
+.range input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    margin: -8px 0  0;
+    border-radius: 50%;
+    background: #33cc33;
+    cursor: pointer;
+    border: 0 !important;
+}
+.range input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    margin: -8px 0  0;
+    border-radius: 50%;
+    background: #33cc33;
+    cursor: pointer;
+    border: 0 !important;
+}
+.range input::-ms-thumb {
+    width: 18px;
+    height: 18px;
+    margin: -8px 0  0;
+    border-radius: 50%;
+    background: #33cc33;
+    cursor: pointer;
+    border: 0 !important;
+}
+.range input::-webkit-slider-runnable-track {
+    width: 100%;
+    margin: 50px 0 0;
+    height: 5px;
+    cursor: pointer;
+    background: #996633;
+}
+.range input::-moz-range-track {
+    width: 100%;
+    margin: -110px -200px 0;
+    height: 5px;
+    cursor: pointer;
+    background: #996633;
+}
+.range input::-ms-track {
+    width: 100%;
+     margin: 0px 0 0;
+    height: 5px;
+    cursor: pointer;
+    background: #996633;
+}
+.range input:focus {
+    background: none;
+    outline: none;
+}
+.range input::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.range-labels {
+    margin: 50px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.range-labels li {
+    position: relative;
+    float: left;
+    width: 70px;
+    text-align: center;
+    color: #996633;
+    font-size: 14px;
+    cursor: pointer;
+}
+.range-labels li::before {
+    position: absolute;
+    top: -28px;
+    right: 0;
+    left: 25px;
+    content: "";
+    margin: 0 0 0;
+    width: 13px;
+    height: 13px;
+    background: #996633;
+    border-radius: 50%;
+}
+.range-labels .active {
+    color: #33cc33;
+}
+.range-labels .selected::before {
+    background: #33cc33;
+}
+.range-labels .active.selected::before {
+    display: none;
+}
+
+/*ligne*/
+.range1 {
+    position: relative;
+    width: 580px;
+    height: 5px;
+    margin: 0 20px 0;
+}
+
+/*ligne de parcours*/
+.range1 input {
+    width: 100%;
+    position: absolute;
+    top: -22px;
+    height: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/*curseur mobile*/
+.range1 input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    margin: -7px 0 0;
+    border-radius: 50%;
+    background: #33cc33;
+    cursor: pointer;
+    border: 0 !important;
+}
+
+.range1 input::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    margin: -7px 0  0;
+    border-radius: 50%;
+    background: #33cc33;
+    cursor: pointer;
+    border: 0 !important;
+}
+.range1 input::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    margin: -7px 0 0;
+    border-radius: 50%;
+    background: #33cc33;
+    cursor: pointer;
+    border: 0 !important;
+}
+
+/*ligne de parcours*/
+.range1 input::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #996633;
+}
+.range1 input::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #996633;
+}
+.range1 input::-ms-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #996633;
+}
+.range1 input:focus {
+    background: none;
+    outline: none;
+}
+.range1 input::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+/*ensemble*/
+.range-hour {
+    margin: 120px -10px 0;
+    padding: 0;
+    list-style: none;
+}
+/*écriture en dessous des points*/
+.range-hour li {
+    position: relative;
+    float: left;
+    width: 25px;
+    text-align: center;
+    color: #996633;
+    font-size: 14px;
+    cursor: pointer;
+}
+/*taille point sur slider*/
+.range-hour li::before {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    left: 0;
+    content: "";
+    margin: 0 auto;
+    width: 9px;
+    height: 9px;
+    background: #996633;
+    border-radius: 50%;
+}
+.range-hour .active {
+    color: #33cc33;
+}
+.range-hour .selected::before {
+    background: #33cc33;
+}
+.range-hour .active.selected::before {
+    display: none;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    color: black;
+    width: 275px;
+    height: 60px;
+    padding: 2px;
+    font: 8px sans-serif;
+    background: grey;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+label {
+color: #C0321C;
+font-weight: bold;
+display: block;
+width: 110px;
+float: right;
+}
+

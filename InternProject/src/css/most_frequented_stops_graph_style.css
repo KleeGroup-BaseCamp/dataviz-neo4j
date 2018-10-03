@@ -1,0 +1,47 @@
+/* Graph */
+
+.link {
+  stroke: "black";
+  stroke-opacity: 0.15;
+}
+ 
+.node {
+  stroke: "black"; /*#B40431;*/
+  fill:"#666666"; /*#B40431;*/
+  fill-opacity: 0.6;
+  stroke-width: 1.5px;
+}
+
+.label {
+
+  font-size: 11px;
+  fill: "black";
+  stroke-width:0.2;
+  color: "white";
+}
+
+.linklabel {
+
+  font-size: 9px;
+  fill: "black";
+  stroke-width:0.2;
+}
+
+.buttons {
+
+  position: absolute;
+  right: 0;
+  top: 30%;
+  width: 8em;
+  margin-top: -2.5em;
+
+}
+
+#selectedButton  {
+
+  stroke: #688CE4;
+  fill:#688CE4;
+  fill-opacity: 0.6;
+  stroke-width: 1.5px;
+
+}

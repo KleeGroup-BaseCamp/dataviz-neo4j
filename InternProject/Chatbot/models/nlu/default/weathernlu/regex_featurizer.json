@@ -1,0 +1,14 @@
+[
+    {
+        "name": "metro_routes",
+        "pattern": "[0-9]{1,2}"
+    },
+    {
+        "name": "rer_routes",
+        "pattern": "[A-Z]|[a-z]"
+    },
+    {
+        "name": "tramway_routes",
+        "pattern": "T.([0-9]{1,2}) | [0-9]{1,2}"
+    }
+]

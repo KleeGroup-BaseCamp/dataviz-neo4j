@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<path name="opendata.paris">
+		<param name="url" value="https://opendata.paris.fr/api/datasets/1.0"/>    	
+	</path>
+	<path name="opendata.idf">
+		<param name="url" value="https://data.iledefrance.fr/explore/dataset/"/>    	
+	</path>
+	<path name="opendata.stif">
+		<param name="url" value="https://opendata.stif.info/explore/dataset/"/>    	
+	</path>
+	<path name="server">
+		<param name="rootFolder" value="src/main/resources/"/>    	
+	</path>
+	<path name="VM">
+		<param name="rootFolder" value="/data/oayoub/upload/"/>    	
+	</path>
+	<path name="api.stif.passages">
+		<param name="url" value="https://api-lab-trall-stif.opendata.stif.info/service/"/>    	
+	</path>
+	<path name="api.stif.traffic">
+		<param name="url" value="https://api-lab-trone-stif.opendata.stif.info/service/"/>    	
+	</path>
+</config>

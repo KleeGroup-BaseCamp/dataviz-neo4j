@@ -1,0 +1,293 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "hey",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Salut",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "good morning",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Bonjour",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Bonsoir",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "bye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "A plus",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "A bientôt",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Je veux prendre la ligne B",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "ligne",
+            "entity": "info_type"
+          },
+          {
+            "start": 25,
+            "end": 26,
+            "value": "B",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "J'aimerais des informations sur une ligne de métro.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 36,
+            "end": 41,
+            "value": "ligne",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "Que pouvez-vous me dire sur le rer C ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 36,
+            "value": "ligne",
+            "entity": "info_type"
+          }
+        ]
+      },      
+      {
+        "text": "Est-ce que la 4 a beaucoup de retard ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 15,
+            "value": "4",
+            "entity": "route_name"
+          },
+          {
+            "start": 30,
+            "end": 36,
+            "value": "retard",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Y a-t-il du monde dans le rer C ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 31,
+            "value": " rer C",
+            "entity": "route_name"
+          },
+          {
+            "start": 12,
+            "end": 17,
+            "value": "monde",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Où changer pour prendre le métro 6 ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "changer",
+            "entity": "aim"
+          },
+          {
+            "start": 26,
+            "end": 34,
+            "value": " métro 6",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis pressé. Le rer A est-il encore retardé ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "rer A",
+            "entity": "route_name"
+          },
+          {
+            "start": 39,
+            "end": 46,
+            "value": "retardé",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Le B est-il bondé à cette heure-ci ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "value": "B",
+            "entity": "route_name"
+          },
+          {
+            "start": 12,
+            "end": 17,
+            "value": "bondé",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Je suis sur la ligne B, et je veux prendre la 5 ensuite.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 35,
+            "end": 42,
+            "value": "prendre",
+            "entity": " "
+          }
+        ]
+      },
+      {
+        "text": "Je veux prendre le c !",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 20,
+            "value": "c",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche des informations pour rentrer chez moi. Je prends la 5, puis la 6. ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 64,
+            "end": 65,
+            "value": "5",
+            "entity": "route_name"
+          },
+          {
+            "start": 75,
+            "end": 76,
+            "value": "6",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je dois changer à Denfert depuis la B. ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "Denfert",
+            "entity": "stop_name"
+          },
+          {
+            "start": 18,
+            "end": 25,
+            "value": "Denfert",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que le traffic est dense ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que le traffic est fluide ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il y a du monde ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 25,
+            "value": "monde",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Il y a du retard ?",
+        "intent": "inform ",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "retard",
+            "entity": "aim"
+          }
+        ]
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

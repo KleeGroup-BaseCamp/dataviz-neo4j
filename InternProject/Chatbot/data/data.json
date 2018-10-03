@@ -1,0 +1,3364 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "hey",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Salut",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Bonjour",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Bonsoir",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "bye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "A plus",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "A bientôt",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Je cherche des informations pour rentrer chez moi. ",
+        "intent": "inform",
+        "entities": []
+      },
+      {
+        "text": "J'ai quelques questions à vous poser. ",
+        "intent": "inform",
+        "entities": []
+      },
+      {
+        "text": "Pouvez-vous m'aider ? ",
+        "intent": "inform",
+        "entities": []
+      },
+      {
+        "text": "J'ai des problèmes pour rentrer chez moi.",
+        "intent": "inform",
+        "entities": []
+      },
+      {
+        "text": "J'aimerais des informations sur une ligne de métro.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 36,
+            "end": 41,
+            "value": "route",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "Je voudrais savoir quelque chose concernant un stop.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 47,
+            "end": 51,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "J'ai des questions à propos d'une station.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 34,
+            "end": 41,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "Auriez-vous des informations sur une ville ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 42,
+            "value": "town",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche un arrêt.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "Je voudrais poser des questions sur une ligne de bus en particulier.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 40,
+            "end": 45,
+            "value": "route",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche la ligne C.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 20,
+            "end": 21,
+            "value": "C",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "C'est à propos du bus 56.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 21,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 18,
+            "end": 21,
+            "value": "bus",
+            "entity": "transport_type"
+          },
+          {
+            "start": 22,
+            "end": 24,
+            "value": "56",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche l'arrêt Luxembourg.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 19,
+            "end": 29,
+            "value": "Luxembourg",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je veux aller à Bastille",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 16,
+            "end": 24,
+            "value": "Bastille",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je vais prendre la ligne 7.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 25,
+            "end": 26,
+            "value": "7",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Que pouvez-vous me dire sur le rer C ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 31,
+            "end": 34,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 35,
+            "end": 36,
+            "value": "C",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je veux prendre la ligne B",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 25,
+            "end": 26,
+            "value": "B",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "J'ai quelques questions à vous poser à propos de la ligne de bus 154.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 52,
+            "end": 57,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 61,
+            "end": 68,
+            "value": "bus 154",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "J'aimerais prendre le rer J, qui n'est pas très utlisé.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 22,
+            "end": 25,
+            "value": "rer_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 22,
+            "end": 25,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 26,
+            "end": 27,
+            "value": "J",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "J'ai du mal à trouver des infos sur la ligne de bus 156, pouvez-vous m'aider ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 39,
+            "end": 44,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 49,
+            "end": 51,
+            "value": "bus",
+            "entity": "transport_type"
+          },
+          {
+            "start": 53,
+            "end": 55,
+            "value": "156",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je ne sais pas.",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "Alors là, aucune idée ! ",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "Ah désolé je ne sais pas ! ",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "euh",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "haha comment est-ce que je suis censée savoir ça ?",
+        "intent": "dont_know",
+        "entities": []
+      },
+      {
+        "text": "Je veux aller à l'arrêt de Belleville.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 23,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 26,
+            "end": 37,
+            "value": " Belleville",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche la station Cadet.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 22,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 22,
+            "end": 27,
+            "value": "Cadet",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "J'ai deux-trois questions sur l'arrêt de Bourg-la-Reine.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 37,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 41,
+            "end": 55,
+            "value": "Bourg-la-Reine",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je voudrais des informations sur champigny.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 42,
+            "value": "Champigny",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "J'ai besoin d'informations sur la station de rer d'antony.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 34,
+            "end": 42,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 51,
+            "end": 57,
+            "value": "Antony",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche l'arret du Luxembourg. ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 22,
+            "end": 32,
+            "value": "Luxembourg",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Il me faut des infos sur chatelet, et rapidement parce que je suis pressé.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 33,
+            "value": "Châtelet",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche l'arret \"Cité\".",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 18,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 20,
+            "end": 24,
+            "value": "Cité",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je dois faire un détour pour rentrer chez moi, et je ne connais pas du tout l'arrêt Franklin-Roosevelt. Pouvez-vous m'aider ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 78,
+            "end": 83,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 84,
+            "end": 102,
+            "value": "Franklin-Roosevelt",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche Gazeran",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 18,
+            "value": "Gazeran",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Peux tu me renseigner à propos d'une station de bus ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 44,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "Je suis complètement perdue, je cherche un arrêt. Pouvez-vous m'aider ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 43,
+            "end": 48,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "C'est à propos de la station de gentilly",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 32,
+            "end": 40,
+            "value": "Gentilly",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Donnez-moi des informations sur le luth.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "Le Luth",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche la station de métro de richard lenoir",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 34,
+            "end": 48,
+            "value": "Richard Lenoir",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "J'ai besoin d'aide à propos de l'arret Ledru-Rollin",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 38,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 39,
+            "end": 51,
+            "value": "Ledru-Rollin",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je veux aller à Laplace",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 16,
+            "end": 23,
+            "value": "Laplace",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche un arrêt en particulier.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "C'est à propos  de Mantes la Jolie",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 34,
+            "value": "Mantes-la-Jolie",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je veux des informations sur La Ferme",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 28,
+            "end": 37,
+            "value": " La Ferme",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Sur  Lardy",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 5,
+            "end": 10,
+            "value": "Lardy",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "C'est Le Bourget. ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 6,
+            "end": 16,
+            "value": "Le Bourget",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "\"Le Val d'Or\"",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 1,
+            "end": 12,
+            "value": "Le Val d'Or",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche l'arrêt des Ardoines",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 31,
+            "value": "Ardoines",
+            "entity": "stop_name"
+          },
+          {
+            "start": 13,
+            "end": 18,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "la station les gobelins",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 11,
+            "end": 23,
+            "value": "Les Gobelins",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "l'arrêt des halles",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 2,
+            "end": 7,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 12,
+            "end": 18,
+            "value": "Halles",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis dans le coin de Lozere",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 30,
+            "value": " Lozere",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je ne suis pas loin de l'arrêt de tram Maryse Bastie",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 39,
+            "end": 52,
+            "value": "Maryse Bastie",
+            "entity": "stop_name"
+          },
+          {
+            "start": 25,
+            "end": 30,
+            "value": "stop",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "près de la station Maule",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 18,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 19,
+            "end": 24,
+            "value": "Maule",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis à côté de michel bizot",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 30,
+            "value": "michel bizot",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je me dirige vers Mirabeau",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 26,
+            "value": "Mirabeau",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis à côté de la station Michel Bizot",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 29,
+            "end": 41,
+            "value": "Michel Bizot",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je me dirige vers l'arrêt Mirabeau",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 25,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 26,
+            "end": 34,
+            "value": "Mirabeau",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "près de Maule",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 13,
+            "value": "Maule",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je ne suis pas loin de Mitry-Claye",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 34,
+            "value": "Mitry-Claye",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis juste à côté de l'arrêt Monceau",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 26,
+            "end": 31,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 32,
+            "end": 39,
+            "value": "Monceau",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "J'ai deux-trois questions sur la station de bus de Montgallet.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 40,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 51,
+            "end": 61,
+            "value": "Montgallet",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis aux alentours de Montsouris",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 35,
+            "value": "Montsouris",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis aux alentours de l'arrêt de tram Montsouris.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 27,
+            "end": 32,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 41,
+            "end": 51,
+            "value": "Montsouris",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "C'est sur la station Moulin-Galant",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 21,
+            "end": 34,
+            "value": "Moulin-Galant",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "C'est sur Moulin-Galant",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 10,
+            "end": 23,
+            "value": "Moulin-Galant",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je me pose des questions sur la station de RER de Nangis",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 50,
+            "end": 56,
+            "value": "Nangis",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je me pose des questions sur Nangis.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 29,
+            "end": 35,
+            "value": "Nangis",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche Nation",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 17,
+            "value": "Nation",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il y a beaucoup de monde à Denfert ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 29,
+            "end": 34,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 37,
+            "end": 44,
+            "value": "Denfert-Rochereau",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il y a beaucoup de monde ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 29,
+            "end": 34,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Je peux savoir le nombre de personnes à Fontenay aux Roses ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 37,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 40,
+            "end": 58,
+            "value": "Fontenay-aux-Roses",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Il y a beaucoup de monde à l'arrêt Montparnasse ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 29,
+            "end": 34,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 35,
+            "end": 47,
+            "value": "Montparnasse",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "La station gare de l'est est-elle encore bondée ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 11,
+            "end": 25,
+            "value": "gare de l'est ",
+            "entity": "stop_name"
+          },
+          {
+            "start": 41,
+            "end": 47,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il n'y a pas trop de monde ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 31,
+            "end": 36,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "J'ai peur que ce soit bondé...",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 22,
+            "end": 27,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que le traffic y est dense ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Comment est le traffic à Denfert-Rochereau ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 22,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 25,
+            "end": 42,
+            "value": "Denfert-Rochereau",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Le traffic est-il dense à Epone Mezieres ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 26,
+            "end": 40,
+            "value": "Epone-Mezieres",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "La circulation n'est pas trop dense ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 15,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "La circulation n'est pas trop dense à Noisy Champs ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 15,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 37,
+            "end": 50,
+            "value": " Noisy-Champs",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je suis un peu claustrophobe... Est-ce que ça ira ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 28,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Le métro ne sera pas surpeuplé ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 30,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 3,
+            "end": 8,
+            "value": "metro_train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Orly Sud ne sera pas trop surpeuplé ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "Orly-Sud",
+            "entity": "stop_name"
+          },
+          {
+            "start": 26,
+            "end": 35,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que Antony ne sera pas trop bondé ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 17,
+            "value": "Antony",
+            "entity": "stop_name"
+          },
+          {
+            "start": 35,
+            "end": 41,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que Alma Marceau n'est pas trop surpeuplé ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 24,
+            "value": "Alma Marceau ",
+            "entity": "stop_name"
+          },
+          {
+            "start": 39,
+            "end": 48,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est ce que la gare Montparnasse n'est pas trop pleine de monde ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 47,
+            "end": 62,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 14,
+            "end": 31,
+            "value": "Gare Montparnasse",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Ce ne sera pas trop surpeuplé ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 29,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que la circulation sera fluide? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 25,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que la circulation sera fluide à Bonne Nouvelle ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 25,
+            "value": "traffic",
+            "entity": "stop_name"
+          },
+          {
+            "start": 40,
+            "end": 54,
+            "value": "Bonne Nouvelle",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Est ce que le traffic est dense à boran sur oise ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 34,
+            "end": 49,
+            "value": "Boran-sur-Oise",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Comment est la circulation dans le métro à Breval ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 26,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 43,
+            "end": 49,
+            "value": "Breval",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que Campo-Formio n'est pas trop bondé ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 23,
+            "value": "Campo-Formio",
+            "entity": "stop_name"
+          },
+          {
+            "start": 39,
+            "end": 44,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Pourrais-je savoir le nombre de personnes au Canal Saint Denis ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 22,
+            "end": 41,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 45,
+            "end": 62,
+            "value": "Canal Saint Denis",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Quel est le retard à Chamarande ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "delay",
+            "entity": "aim"
+          },
+          {
+            "start": 21,
+            "end": 31,
+            "value": "Chamarande",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Combien de temps vais-je attendre ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 33,
+            "value": "next_train",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il risque d'y avoir du retard ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 33,
+            "end": 39,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il risque d'avoir du retard à Chauffry ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 31,
+            "end": 37,
+            "value": "delay",
+            "entity": "aim"
+          },
+          {
+            "start": 40,
+            "end": 48,
+            "value": "Chauffry",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "De combien est le retard ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que le prochain train à Chilly-Mazarin est retardé  ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 50,
+            "end": 57,
+            "value": "delay",
+            "entity": "aim"
+          },
+          {
+            "start": 31,
+            "end": 45,
+            "value": "Chilly-Mazarin",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce que le prochain train est retardé ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 32,
+            "end": 40,
+            "value": "delay",
+            "entity": "aim"
+          },
+          {
+            "start": 23,
+            "end": 28,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Quand est le prochain train à beauvais ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 22,
+            "end": 27,
+            "value": "train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 30,
+            "end": 38,
+            "value": "Beauvais",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "A quelle heure arrive le rer B à Massy Palaiseau ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 2,
+            "end": 14,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 25,
+            "end": 28,
+            "value": "rer_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 33,
+            "end": 48,
+            "value": "Massy-Palaiseau",
+            "entity": "stop_name"
+          },
+          {
+            "start": 29,
+            "end": 30,
+            "value": "B",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Le métro arrive bientôt ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "metro_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 16,
+            "end": 23,
+            "value": "next_train",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "le tramway part quand de l'arrêt Canal Saint Denis ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "tramway",
+            "entity": "transport_type"
+          },
+          {
+            "start": 16,
+            "end": 21,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 27,
+            "end": 32,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 33,
+            "end": 50,
+            "value": "Canal Saint Denis",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Le tramway part quand ? ",
+        "intent": "",
+        "entities": [
+          {
+            "start": 15,
+            "end": 21,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 3,
+            "end": 10,
+            "value": "tramway",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Quand est-ce que le RER A arrive à cergy le haut ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 20,
+            "end": 23,
+            "value": "rer_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 24,
+            "end": 25,
+            "value": "A",
+            "entity": "route_name"
+          },
+          {
+            "start": 35,
+            "end": 48,
+            "value": "Cergy-le-Haut",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche l'heure de départ à la gare de chamarande.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 28,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 34,
+            "end": 38,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 42,
+            "end": 52,
+            "value": "Chamarande",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "J'aimerais savoir quand le prochain train partira  de Chateaudun.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 27,
+            "end": 35,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 36,
+            "end": 41,
+            "value": "train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 54,
+            "end": 64,
+            "value": "Chateaudun",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "cest quand le prochain départ a chevaleret",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 22,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 42,
+            "value": "Chevaleret",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "A quelle heure est prévue le prochain départ de Compans ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 29,
+            "end": 37,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 48,
+            "end": 55,
+            "value": "Compans",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je voudrais connaître l'heure de départ du prochain train.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 24,
+            "end": 39,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 43,
+            "end": 51,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 52,
+            "end": 57,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Donnez-moi l' heure de départ de ce train s'il vous plaît.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 29,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 36,
+            "end": 41,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Veuillez me dire l'horaire d'arrivée du prochain métro.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 36,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 40,
+            "end": 48,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 49,
+            "end": 54,
+            "value": "metro_train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Quand est le prochain départ de Desnouettes ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 28,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 43,
+            "value": "Desnouettes",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "A quelle heure est le départ de Didot ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 22,
+            "end": 28,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 37,
+            "value": "Didot",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "A quelle heure est le départ du prochain train  ? ",
+        "intent": "",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 22,
+            "end": 28,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 40,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 41,
+            "end": 46,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "le metro 13 arrive a quelle heure a duroc",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "metro_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 9,
+            "end": 11,
+            "value": "13",
+            "entity": "route_name"
+          },
+          {
+            "start": 19,
+            "end": 33,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 36,
+            "end": 41,
+            "value": "Duroc",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "quand est le prochain train ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 22,
+            "end": 27,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "quand est l'arrivee du prochain tram a guynemer",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 23,
+            "end": 31,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 36,
+            "value": "tramway",
+            "entity": "transport_type"
+          },
+          {
+            "start": 39,
+            "end": 47,
+            "value": "Guynemer",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "le rer k arrive quand ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 6,
+            "value": "rer_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 16,
+            "end": 21,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "value": "K",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "le tramway 4 est prévu pour quelle heure à la noue ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "tramway",
+            "entity": "transport_type"
+          },
+          {
+            "start": 11,
+            "end": 12,
+            "value": "4",
+            "entity": "route_name"
+          },
+          {
+            "start": 28,
+            "end": 40,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 43,
+            "end": 50,
+            "value": "La Noue",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "le prochain départ du rer A depuis Lognes est prévu pour quand ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 18,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 22,
+            "end": 25,
+            "value": "rer_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 35,
+            "end": 41,
+            "value": "Lognes",
+            "entity": "stop_name"
+          },
+          {
+            "start": 57,
+            "end": 62,
+            "value": "next_train",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Le prochain départ du TER est prévu quand ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 18,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 22,
+            "end": 25,
+            "value": "TER",
+            "entity": "route_name"
+          },
+          {
+            "start": 36,
+            "end": 41,
+            "value": "next_train",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Dans combien de temps est le prochain train ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 5,
+            "end": 21,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 29,
+            "end": 37,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 38,
+            "end": 43,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "J'ai besoin d'aide à propos d'une station de métro",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 34,
+            "end": 41,
+            "value": "stop",
+            "entity": "info_type"
+          },
+          {
+            "start": 45,
+            "end": 50,
+            "value": "metro_train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "c'est pour une ligne de bus.",
+        "intent": "",
+        "entities": [
+          {
+            "start": 15,
+            "end": 20,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 24,
+            "end": 27,
+            "value": "bus",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "c'est pour une ligne.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 20,
+            "value": "route",
+            "entity": "info_type"
+          }
+        ]
+      },
+      {
+        "text": "quelle est l'heure d'arrivée du prochain train ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 28,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 40,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 41,
+            "end": 46,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "quand arrive le rer ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 16,
+            "end": 19,
+            "value": "rer_train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "quand est-ce que le bus arrive ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 20,
+            "end": 23,
+            "value": "bus",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Au revoir",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Quelles sont les lignes que je peux emprunter ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 24,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quelles sont les lignes que je peux emprunter depuis Bois-le-Roi ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 53,
+            "end": 64,
+            "value": "Bois-le-Roi",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Quelles sont les lignes possibles ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quelles sont les lignes possibles depuis Bolivar ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 41,
+            "end": 48,
+            "value": "Bolivar",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Où puis-je aller à partir de bueil ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 16,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 29,
+            "end": 34,
+            "value": "Bueil",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Quelles sont les lignes connectées à cergy le haut  ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 23,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 37,
+            "end": 50,
+            "value": "Cergy-le-Haut",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "les lignes qui lui sont connectées",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quels sont les changements possibles ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 26,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quels sont les changements possibles à Chaussee d'Antin ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 26,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 39,
+            "end": 55,
+            "value": "Chaussee d'Antin",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Sur la 5. ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 7,
+            "end": 8,
+            "value": "5",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Pour le E. ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 9,
+            "value": "E",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche le rer B",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 17,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 18,
+            "end": 19,
+            "value": "B",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "J'ai besoin d'informations sur la ligne de métro 4.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 34,
+            "end": 39,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 43,
+            "end": 48,
+            "value": "metro_train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 49,
+            "end": 50,
+            "value": "4",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il y a du monde en ce moment ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 25,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "s'il y a du monde en ce moment.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Est-ce qu'il y a du monde en ce moment à Arpajon ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 25,
+            "value": "traffic",
+            "entity": "aim"
+          },
+          {
+            "start": 41,
+            "end": 48,
+            "value": "Arpajon",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "non",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "non merci ! ",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "ça ira ",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "non non c'est bon",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "pas la peine, mais merci",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "non ça va",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "euh je ne pense pas ",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "je ne pense pas, merci",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "rien, merci",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "rien",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "Je cherche le retard à Avron",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 20,
+            "value": "delay",
+            "entity": "aim"
+          },
+          {
+            "start": 23,
+            "end": 28,
+            "value": "Avron",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Quel est le retard à Belvedere en général ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "delay",
+            "entity": "aim"
+          },
+          {
+            "start": 21,
+            "end": 30,
+            "value": "Belvedere",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "le retard",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 9,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "le retard moyen",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 9,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "s'il y a du monde ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 17,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quel est le retard ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "le trafic est-il retardé ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "non merci, j'ai tout ce qu'il me faut :)",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "Bonjour !",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Le rer à Bourg-la-Reine, il arrive quand ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 6,
+            "value": "rer",
+            "entity": "transport_type"
+          },
+          {
+            "start": 9,
+            "end": 23,
+            "value": "Bourg-la-Reine",
+            "entity": "stop_name"
+          },
+          {
+            "start": 35,
+            "end": 40,
+            "value": "next_train",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "merci !",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "Je vous remercie",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "le prochain train ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 3,
+            "end": 11,
+            "value": "next_train",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Je veux savoir le retard du prochain train pour Arcueil-Cachan",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "delay",
+            "entity": "aim"
+          },
+          {
+            "start": 37,
+            "end": 42,
+            "value": "train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 48,
+            "end": 62,
+            "value": "Arcueil-Cachan",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "sur Bagneux",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 4,
+            "end": 11,
+            "value": "Bagneux",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche le retard",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 20,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Place d'Italie",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "Place d'Italie",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Charles-de-Gaulle",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "Charles-de-Gaulle",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Tu peux me dire s'il y a beaucoup de retard ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 37,
+            "end": 43,
+            "value": "delay",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Sur Raspail",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 4,
+            "end": 11,
+            "value": "Raspail",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Où aller pour changer de ligne ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 30,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quels sont les changements possible sur la 5 ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 26,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 43,
+            "end": 44,
+            "value": "5",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Quelles sont les liaisons possibles avec cette ligne ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 47,
+            "end": 52,
+            "value": "route",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Quand part le prochain train pour Antony ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 14,
+            "end": 22,
+            "value": "next_train",
+            "entity": "aim"
+          },
+          {
+            "start": 23,
+            "end": 28,
+            "value": "train",
+            "entity": "transport_type"
+          },
+          {
+            "start": 34,
+            "end": 40,
+            "value": "Antony",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Ou est ce quon peut changer de train",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 20,
+            "end": 27,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 31,
+            "end": 36,
+            "value": "train",
+            "entity": "transport_type"
+          }
+        ]
+      },
+      {
+        "text": "Quels sont les changements possibles ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 26,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quelles sont les liaisons possibles ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Où est-ce que je peux changer de ligne ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quand est-ce que je peux changer ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "change",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quels sont les changements possibles sur la ligne 9 ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 26,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 44,
+            "end": 49,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 50,
+            "end": 51,
+            "value": "9",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche les changements possibles depuis la ligne 13",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 15,
+            "end": 26,
+            "value": "change",
+            "entity": "aim"
+          },
+          {
+            "start": 47,
+            "end": 52,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 53,
+            "end": 55,
+            "value": "13",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Comment je fais pour aller sur la ligne E ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 34,
+            "end": 39,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 40,
+            "end": 41,
+            "value": "E",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche comment aller sur la ligne B. ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 37,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 38,
+            "end": 39,
+            "value": "B",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Comment je fais pour prendre la ligne E ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 37,
+            "value": "route",
+            "entity": "info_type"
+          },
+          {
+            "start": 38,
+            "end": 39,
+            "value": "E",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Comment je fais pour aller sur la 5 ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 34,
+            "end": 35,
+            "value": "5",
+            "entity": "route_name"
+          },
+          {
+            "start": 0,
+            "end": 7,
+            "value": "nearest_stop",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "Quel est l'arrêt de la C le plus proche de moi ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 23,
+            "end": 24,
+            "value": "C",
+            "entity": "route_name"
+          },
+          {
+            "start": 28,
+            "end": 39,
+            "value": "nearest_stop",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "je fais comment pour prendre la 4 ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 20,
+            "end": 28,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 32,
+            "end": 33,
+            "value": "4",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "Je cherche comment prendre la 13",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 11,
+            "end": 18,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 19,
+            "end": 26,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 30,
+            "end": 32,
+            "value": "13",
+            "entity": "route_name"
+          }
+        ]
+      },
+      {
+        "text": "48.862725",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "48.862725",
+            "entity": "latitude"
+          }
+        ]
+      },
+      {
+        "text": "2.287592000000018",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "2.287592000000018",
+            "entity": "longitude"
+          }
+        ]
+      },
+      {
+        "text": "48,762885737373594",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "48,762885737373594",
+            "entity": "latitude"
+          }
+        ]
+      },
+      {
+        "text": "2,266992634765643",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "2,266992634765643",
+            "entity": "longitude"
+          }
+        ]
+      },
+      {
+        "text": "48,7799",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "48,7799",
+            "entity": "latitude"
+          }
+        ]
+      },
+      {
+        "text": "2,082284",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "2,082284",
+            "entity": "longitude"
+          }
+        ]
+      },
+      {
+        "text": "48.8075847",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "48.8075847",
+            "entity": "latitude"
+          }
+        ]
+      },
+      {
+        "text": "2.1495762",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "2.1495762",
+            "entity": "longitude"
+          }
+        ]
+      },
+      {
+        "text": "J'aimerais savoir autre chose",
+        "intent": "inform",
+        "entities": []
+      },
+      {
+        "text": "Attendez, je voudrais d'auters informations !",
+        "intent": "inform",
+        "entities": []
+      },
+      {
+        "text": "j'aimerais savoir comment faire pour y aller ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 38,
+            "end": 44,
+            "value": "nearest_stop",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "comment est-ce que je peux la joindre ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 30,
+            "end": 37,
+            "value": "nearest_stop",
+            "entity": "aim"
+          },
+          {
+            "start": 0,
+            "end": 7,
+            "value": "nearest_stop",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "est-ce qu'il y a beaucoup de trafic en ce moment ?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 29,
+            "end": 35,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      },
+      {
+        "text": "luxembourg",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "Luxembourg",
+            "entity": "stop_name"
+          }
+        ]
+      },
+      {
+        "text": "Merci bien et bonne journée",
+        "intent": "thankyou",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "Merci bien",
+            "entity": ""
+          },
+          {
+            "start": 14,
+            "end": 27,
+            "value": "bonne journée",
+            "entity": ""
+          }
+        ]
+      },
+      {
+        "text": "Bonne journée",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "a + ",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Bye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "donne moi l'heure",
+        "intent": "inform",
+        "entities": []
+      },
+      {
+        "text": "rien",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "Quelle est l'afluence ? ",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "traffic",
+            "entity": "aim"
+          }
+        ]
+      }
+    ],
+    "regex_features": [
+      {
+        "name": "metro_routes",
+        "pattern": "[0-9]{1,2}"
+      },
+      {
+        "name": "rer_routes",
+        "pattern": "[A-Z]|[a-z]"
+      },
+      {
+        "name": "tramway_routes",
+        "pattern": "T.([0-9]{1,2}) | [0-9]{1,2}"
+      },
+      {
+        "name": "lat_and_lon",
+        "pattern": "[0-9]*[.]?[0-9]+ | [0-9]*[,]?[0-9]+"
+      }
+    ],
+    "entity_synonyms": []
+  }
+}

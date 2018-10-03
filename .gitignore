@@ -1,0 +1,6 @@
+/.metadata/
+
+/.recommenders/
+/InternProject/node_modules/
+*.txt
+*.zip

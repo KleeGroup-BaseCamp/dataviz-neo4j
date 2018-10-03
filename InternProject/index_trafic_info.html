@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/sankey_diagram_style.css">
+
+ 
+</head>
+ 
+<body>
+
+  <p id="chart">
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="src/js/test_info_route.js"></script>
+  <script>
+
+// Initial datas
+var datas = [{"name" : "Train", "type": 2, "data" : []}, 
+             {"name" : "Bus", "type": 3, "data" : []},
+             {"name" : "Métro", "type": 1, "data" : []}, 
+             {"name" : "Tramway", "type": 0, "data" : []} 
+            ]
+
+var nb_nodes = 0 ; 
+
+// Couleur des arrêts en fonction de leur proportion de trains en retard
+var color = d3.scale.linear().domain([1,100])
+      .interpolate(d3.interpolateHcl)
+      .range([d3.rgb("#B40404"), d3.rgb('#04B431')])
+
+// Initialisation de l'affichage
+var margin = {top: 100, right: 110, bottom: 100, left: 110},
+    width = window.innerWidth - margin.left - margin.right,
+    height = window.innerHeight/1.5 - margin.top - margin.bottom;
+// Append the svg canvas to the page
+var svg = d3.select("#chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + 2*margin.top + ")");
+
+svg.append("text").text("")
+  .attr("id", "title")
+  .attr("x", -50)
+  .attr("y", -150);
+
+svg.append("text").text("")
+  .attr("id", "routeInfo_0")
+  .attr("x", 0)
+  .attr("y", height -100);
+svg.append("text").text("")
+  .attr("id", "routeInfo_1")
+  .attr("x", 0)
+  .attr("y", height -80);
+
+
+// Get initial data : name of routes with no other information
+getData(datas);
+
+// Set the sankey diagram properties
+var sankey = d3.sankey()
+    .nodeWidth(36)
+    .nodePadding(40)
+    .size([width, height]);
+var path = sankey.link();
+
+/**
+ * Get all the route name and put it into the object given in parameter
+**/
+function getData(d){
+
+  d.forEach(function(transport){
+    jQuery.get( "http://localhost:8080/RouteTraficInfo/RouteTraficInfo/Route/" + transport.type, function(data) {
+        data.forEach(function(e){
+          transport.data.push({"route_name": JSON.parse(e.val1), "route_id": JSON.parse(e.val2), 
+                               "nb_vald": 0, "nb_disturbances": 0, "links" : [], "nodes" : [] } ) ; 
+      })
+    }).done(function(){
+
+      var select = d3.select('body').append("menu")
+        .append("text")
+          .text(transport.name)
+        .append('select')
+          .attr('class','select_' + transport.type);
+
+      if(transport.type === 2){
+        select.on('change',  onchangeTrain);
+      } else if (transport.type === 3){
+        select.on("change",onchangeBus);
+      } else if (transport.type === 1){
+          select.on("change",onchangeMetro);
+      } else if (transport.type === 0){
+        select.on("change", onchangeTramway);
+      } else{
+        alert("Ce type de transport n'est pas défini")
+      } 
+
+      var options = select
+          .selectAll('option')
+          .data(transport.data).enter()
+          .append('option')
+            .text(function (d) { return d.route_name; });
+
+    })
+  })
+}
+
+/**
+ * Get all the route name and put it into the object given in parameter
+**/
+function getRoute(d, i){
+
+    jQuery.get( "http://localhost:8080/RouteTraficInfo/RouteTraficInfo/" + "\"" + d[i].route_id + "\"", function(data) {
+      d[i].nb_vald = data.nb_vald;
+      d[i].nb_disturbances = data.nb_disturbances;
+      data.routeSections.forEach(function(e){
+        d[i].links.push({"source": JSON.parse(e.stop1_id), "target": JSON.parse(e.stop2_id), "name": d[i].route})
+      })
+      d[i].nodes = data.stops_info; 
+      d[i].nodes.forEach(function(e){
+        e.name = JSON.parse(e.name)
+      })
+      nb_nodes = data.stops_info.length;
+    }).done(function(){
+      d3.select(/*"#routeInfo_0"*/"#title").text(datas[0].data[selectIndex].route_name + " - Nombre de validations moyen : " + datas[0].data[selectIndex].nb_vald + " / jour - Nombre de perturbations moyen : " + datas[0].data[selectIndex].nb_disturbances + " / mois " )
+   //   d3.select("#routeInfo_1").text("Nombre de perturbations moyen : " + datas[0].data[selectIndex].nb_disturbances + " / mois ")
+      displaySankey(d[i]);
+    })
+}
+
+/**
+ * For the drop-down menu
+**/
+function onchangeTrain() {
+  selectIndex = d3.select('.select_2').property('selectedIndex');
+  if (datas[0].data[selectIndex].nodes.length === 0){
+    getRoute(datas[0].data, selectIndex);
+  }
+  else{
+    d3.select("#routeInfo_0").text("Nombre de validations moyen : " + datas[0].data[selectIndex].nb_vald + "/jour ");
+    displaySankey(datas[0].data[selectIndex]);
+  }
+  d3.select("#title").text(datas[0].data[selectIndex].route_name);
+}
+
+function onchangeBus() {
+  selectIndex = d3.select('.select_3').property('selectedIndex');
+ if (datas[1].data[selectIndex].nodes.length === 0){
+    getRoute(datas[1].data, selectIndex);
+  }
+  else{
+    d3.select("#routeInfo_0").text("Nombre de validations moyen : " + datas[1].data[selectIndex].nb_vald + " / jour ")
+    d3.select("#routeInfo_1").text("Nombre de perturbations moyen : " + datas[1].data[selectIndex].nb_disturbances + " / mois ")
+    displaySankey(datas[1].data[selectIndex]);
+  }
+  d3.select("#title").text(datas[1].data[selectIndex].route_name);
+}
+function onchangeMetro() {
+  selectIndex = d3.select('.select_1').property('selectedIndex');
+
+ if (datas[2].data[selectIndex].nodes.length === 0){
+    getRoute(datas[2].data, selectIndex);
+  }
+  else{
+    d3.select("#routeInfo_0").text("Nombre de validations moyen : " + datas[2].data[selectIndex].nb_vald + " / jour ")
+    d3.select("#routeInfo_1").text("Nombre de perturbations moyen : " + datas[2].data[selectIndex].nb_disturbances + " / mois ")
+    displaySankey(datas[2].data[selectIndex]);
+  }
+  d3.select("#title").text(datas[2].data[selectIndex].route_name);
+}
+function onchangeTramway() {
+  selectIndex = d3.select('.select_0').property('selectedIndex');
+ if (datas[3].data[selectIndex].nodes.length === 0){
+    getRoute(datas[3].data, selectIndex);
+  }
+  else{
+    d3.select("#routeInfo_0").text("Nombre de validations moyen : " + datas[3].data[selectIndex].nb_vald + " / jour ")
+    d3.select("#routeInfo_1").text("Nombre de perturbations moyen : " + datas[3].data[selectIndex].nb_disturbances + " / mois ")
+    displaySankey(datas[3].data[selectIndex]);
+  }
+  d3.select("#title").text(datas[3].data[selectIndex].route_name);
+}
+
+// Setup the graph
+function putDataInGraph(data, index){
+
+  graph = {"nodes" : [], "links" : []};
+
+  graph.nodes = data[index].nodes;
+  graph.links = data[index].links;
+       // return only the distinct / unique nodes
+  graph.nodes = d3.nest()
+      .key(function (d) { return  d.name; })
+      .entries(graph.nodes)
+
+  graph.nodes.forEach(function (d, i) {
+    graph.nodes[i] = {"name": d.key , "radius": d.values[0].nb_vald/1000, "perc_cancelled": d.values[0].perc_cancelled,
+                      "perc_delayed": d.values[0].perc_delayed, "perc_early": d.values[0].perc_early, "perc_on_time": d.values[0].perc_on_time, "perc_unknown": d.values[0].perc_unknown,
+                      "time_delay": d.values[0].time_delay};
+                      }
+  );
+
+  return graph;
+
+}
+
+function displaySankey(graph){
+
+  svg.selectAll("g").remove();
+
+  sankey
+    .nodes(graph.nodes)
+    .links(graph.links)
+    .layout(32);
+  // add in the links
+  var link = svg.append("g").selectAll(".link")
+    .data(graph.links)
+    .enter().append("path")
+    .attr("class", "link")
+    .attr("d", path)
+    .style("stroke-width", 10)
+    .style("stroke", "#625CD0")
+    .sort(function(a, b) { return b.dy - a.dy; });
+  // add the link titles
+  link.append("title")
+    .text(function(d) {
+      return d.route});
+  // add in the nodes
+  var node1 = svg.append("g").selectAll(".node")
+    .data(graph.nodes)
+    .enter().append("g")
+    .attr("class", "node")
+    .attr("transform", function(d) { 
+      return "translate(" + d.x + "," + d.y + ")"; }), 
+
+    node2 = svg.append("g").selectAll(".node")
+    .data(graph.nodes)
+    .enter().append("g")
+    .attr("class", "node")
+    .attr("transform", function(d) { 
+      return "translate(" + d.x + "," + d.y + ")"; })
+    .attr("pointer-event", "none"), 
+
+    infoRoute = svg.append("g")
+    .data(graph.nodes)
+    .enter().append("g")
+    .attr("class", "node")
+    .attr("transform", function(d) { 
+      return "translate(" + d.x + "," + d.y + ")"; })
+    .attr("pointer-event", "none"); ; 
+   
+  // add the circles for the nodes
+  node1.append("circle")
+    .attr("r", function(d) {
+      if(d.nb_vald === 0) {
+        return 10;
+      }
+      else{
+        return 2*Math.log(d.nb_vald);
+      }
+     })
+    .style("fill", function(d) {    
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "#A19DE3";
+      } else{
+        return color(d.perc_on_time*100) 
+      }
+    })
+    .style("stroke", "#625CD0")
+    .style("stroke-width", 5)
+    .on("mouseover", mouseover)
+    .on("mouseout", mouseout)
+    .append("title")
+    .text(function(d) { 
+      return d.name ; });
+
+    // add the info for the nodes
+  node2.append("rect")
+    .attr("fill", "#585858")
+    .attr("pointer-events", "none")
+    .attr("id", function(d, i){ return "info_" + i})
+    .style("opacity", 0)
+    .attr("rx", 6)
+    .attr("ry", 6)
+    .attr("y", 10)
+    .attr("x", -110)
+    .attr("width", function(d){ return Math.max(d.name.length*11+10, 260);})
+    .attr("height", function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return 40 ; 
+      }
+      else {
+        return 130 ;
+      }
+    });
+
+var k = 0 ; 
+node2.append("text")
+    .attr("fill", "white")
+    .style("opacity", 0)
+    .style("font-weight", "bold")
+    .attr("id", function(d, i){ return "info_" + i})
+    .text(function(d){return d.name})
+    .attr("y", 25)
+    .attr("x", -100)
+    .attr("dy", k++ + "em")
+
+node2.append("text")
+    .attr("fill", "white")
+    .style("opacity", 0)
+    .style("font-weight", "bold")
+    .attr("id", function(d, i){ return "info_" + i})
+    .text(function(d){return "Nombre de perturbations " + d.nb_disturbances.toFixed(2) + "/mois"})
+    .attr("y", 25)
+    .attr("x", -100)
+    .attr("dy", k++ + "em")
+
+  node2.append("text")
+    .attr("fill", "white")
+    .style("opacity", 0)
+    .attr("id", function(d, i){ return "info_" + i})
+    .text(function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "";
+      } else{
+        return "Véhicules en avance " + (d.perc_early*100).toFixed(2) + "%"; 
+      }
+    })
+    .attr("y", 25)
+    .attr("x", -100)
+    .attr("dy", k++ + "em")
+
+  node2.append("text")
+    .attr("fill", "white")
+    .style("opacity", 0)
+    .attr("id", function(d, i){ return "info_" + i})
+    .text(function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "";
+      } else{
+        return "Véhicules à l'heure " + (d.perc_on_time*100).toFixed(2) + "%"
+      }
+    })
+    .attr("y", 25)
+    .attr("x", -100)
+    .attr("dy", k++ + "em")
+
+  node2.append("text")
+    .attr("fill", "white")
+    .style("opacity", 0)
+    .attr("id", function(d, i){ return "info_" + i})
+    .text(function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "";
+      } else{
+        return "Véhicules en retard " + (d.perc_delayed*100).toFixed(2) + "%"
+      }
+    })
+    .attr("y", 25)
+    .attr("x", -100)
+    .attr("dy", k++ + "em")
+
+  node2.append("text")
+     .attr("fill", "white")
+    .style("opacity", 0)
+     .attr("id", function(d, i){ return "info_" + i})
+     .text(function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "";
+      } else{
+        return "Véhicules annulés " + (d.perc_cancelled*100).toFixed(2) + "%"
+      }
+    })
+     .attr("y", 25)
+     .attr("x", -100)
+     .attr("dy", k++ + "em")
+
+  node2.append("text")
+     .attr("fill", "white")
+    .style("opacity", 0)
+     .attr("id", function(d, i){ return "info_" + i})
+     .text(function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "";
+      } else{
+        return "Pas d'information " + (d.perc_unknown*100).toFixed(2) + "%"
+      }
+    })
+     .attr("y", 25)
+     .attr("x", -100)
+     .attr("dy", k++ + "em")
+
+  node2.append("text")
+    .attr("fill", "white")
+    .style("opacity", 0)
+    .attr("id", function(d, i){ return "info_" + i})
+    .text(function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed*100 === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "";
+      } else{
+        return "Temps de retard moyen " + Math.trunc(-d.time_delay/1000/60) + "min " 
+                + Math.trunc(-d.time_delay/1000 - Math.trunc(d.time_delay/1000/60)) + "s"; 
+      }
+    })
+    .attr("y", 25)
+    .attr("x", -100)
+    .attr("dy", k++ + "em")
+
+}
+
+function mouseover(d, i) {
+
+  d3.select(this)
+      .style("fill", "#625CD0")
+      .style("stroke", "#A19DE3"); 
+
+  for(var j = 0 ; j < nb_nodes ; j++){
+    d3.selectAll("#info_" + j).style("opacity", 0);
+  }
+    d3.selectAll("#info_" + i).style("opacity", 5);
+};
+
+function mouseout(d, i) {      
+
+  d3.select(this)
+    .style("fill", function(d){
+      if(d.perc_on_time === 0 && d.perc_delayed === 0 && d.perc_early === 0 && d.perc_cancelled === 0){
+        return "#A19DE3";
+      } else{
+        return color(d.perc_on_time*100); 
+      }
+    })
+    .style("stroke", "#625CD0"); 
+
+  d3.selectAll("#info_" + i)
+    .transition().delay(1000)
+    .style("opacity", 0);
+
+
+
+}    
+
+  </script>
+
+ 
+</body>
+ 
+</html>
